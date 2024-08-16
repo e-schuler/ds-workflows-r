@@ -183,7 +183,7 @@ Run the `data_scan` on `vesselinfo_raw_abbreviated`, but omit "Correlations (C)"
 #| label: Data scan on `vesselinfo_raw_abbreviated`
 #| eval: false
 
-scan <- pointblank::scan_data(____, sections = "____")
+scan <- pointblank::scan_data(vesselinfo_raw_abbreviated, sections = "OVMS")
 scan
 
 ```

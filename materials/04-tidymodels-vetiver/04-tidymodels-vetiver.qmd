@@ -52,7 +52,7 @@ CONNECT_API_KEY=paste-your-api-key-here
 CONNECT_SERVER=https://pub.ferryland.posit.team
 ```
 
-Now you can close the `.Renviron` file and restart your R session (Session–\>Restart R) so that the API key varialble get's added to our environment. To confirm it worked, try running the following code:
+Now you can close the `.Renviron` file and restart your R session (Session–\>Restart R) so that the API key variable get's added to our environment. To confirm it worked, try running the following code:
 
 ```{r}
 
@@ -317,7 +317,7 @@ Before we go any further, we need to convert our logistic regression model into 
 #| label: create-vetiver-model
 
 # Create Vetiver Model
-v_model <- vetiver_model(ferry_fit_lr, "_______/ferry_model")
+v_model <- vetiver_model(ferry_fit_lr, "e-schuler/ferry_model_eschuler")
 
 ```
 
@@ -360,7 +360,7 @@ APIs are a great way for users, applications, or other systems to interact with 
 
 # Create API from pinned model using vetiver
 #  Swap out "____" for your username on Connect.
-vetiver_deploy_rsconnect(board = board, name = "______/ferry_model")
+vetiver_deploy_rsconnect(board = board, name = "e-schuler/ferry_model_eschuler")
 
 ```
 
@@ -385,7 +385,7 @@ Once it's deployed, navigate to the API on Posit Connect and give it a test run!
 On Posit Connect, navigate to your newly created API, and copy the URL for the content below. You can find this URL by clicking the access tab --\> URL.
 
 ```{r}
-api_url <- "_______"
+api_url <- "https://pub.ferryland.posit.team/ferry_model_test"
 
 # Append "/predict" to the end of your api to create the endpoint
 endpoint <- vetiver_endpoint(paste0(api_url, "/predict"))

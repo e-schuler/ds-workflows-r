@@ -58,7 +58,7 @@ The first step in the `pointblank` workflow is to create an **agent.**
 #| label: create agent 
 #| eval: false
 
-agent <- pointblank::create_agent(____)
+agent <- pointblank::create_agent(df)
 agent
 ```
 
@@ -85,10 +85,15 @@ agent <- create_agent(df) |>
   # Now add the following:
   # verify the numeric columns do not have NA values 
   # (hint: use `col_vals_not_null()` and `columns = c(a,b)` to apply the validation to multiple columns)
-  ____ |> 
+  col_vals_not_null(
+    columns = c(a, b)
+  ) |> 
   # verify that the date is before today
   # hint: use `col_vals_lt()` 
-  ____ 
+  col_vals_lt(
+    date,
+    today()
+  )
    
 
 
@@ -168,12 +173,12 @@ Pointblank provides a number of [post-interrogation functions](https://rstudio.g
 #| eval: false
 
 # Passed data
-df_validated <- get_sundered_data(agent = ____,
-                                  type = "____")
+df_validated <- get_sundered_data(agent = agent,
+                                  type = "pass")
 
 # Failed data
-df_failed_validation <- get_sundered_data(agent = ____,
-                                          type = "____")
+df_failed_validation <- get_sundered_data(agent = agent,
+                                          type = "fail")
 
 ```
 
@@ -189,7 +194,7 @@ Pointblank interrogation provides multiple layers of information about our data.
 #| eval: false
 
 # Did all validations pass?
-pointblank::____
+pointblank::all_passed(agent)
 
 
 ```
@@ -205,6 +210,9 @@ First we will see what the x_list contains.
 xlist <- pointblank::get_agent_x_list(agent)
 
 xlist
+
+## Summary of expecations
+xlist$briefs
 
 ```
 

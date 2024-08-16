@@ -155,7 +155,7 @@ response_body
 # clean column names so there are no issues writing the data.
 # Additionally, the results include a nested dataframe of Class information - 
 # we will unnest this so there are no errors with our database interpreting this.
-vesselinfo_raw <- response_body |> unnest(Class) |>  clean_names() 
+vesselinfo_raw <- response_body |> tidyr::unnest(Class) |> janitor::clean_names() 
 vesselinfo_raw
 ```
 
@@ -200,7 +200,7 @@ con
 ```{r}
 #| label: database write
 
-my_username <- "_____" #Fill in your username, workshop participants!
+my_username <- "e-schuler" #Fill in your username, workshop participants!
 
 my_df_name <- paste0("vesselinfo_raw_", my_username)
 
@@ -391,7 +391,7 @@ Lets include:
 
 -   A nicely formatted time stamp.
 
--   A summary the main actions taken in the report, such as how many rows of data were downloaded, how many rows of data were written to the database
+-   A summary the main actions taken in the report, such as how many rows of data were downloaded, how many rows of data were written to the database.
 
 Hint: The `glue` package is helpful for combining text and variables. It's less work than stringing things together with `paste`. With `glue::glue()`, the syntax is `glue("Text with {<r expression or variable>}")`
 

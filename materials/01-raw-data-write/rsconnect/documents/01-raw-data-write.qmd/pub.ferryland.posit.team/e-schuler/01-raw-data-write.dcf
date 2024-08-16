@@ -1,0 +1,14 @@
+name: 01-raw-data-write
+title: 01-raw-data-write
+username: e-schuler
+account: e-schuler
+server: pub.ferryland.posit.team
+hostUrl: https://pub.ferryland.posit.team/__api__
+appId: 168
+bundleId: 393
+url: https://pub.ferryland.posit.team/content/6f9916b3-7252-461a-a6fc-f9871469ba2c/
+version: 1
+quarto_version: 1.4.553
+quarto_engines: knitr
+asMultiple: FALSE
+asStatic: FALSE
