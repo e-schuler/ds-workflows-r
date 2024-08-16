@@ -1,0 +1,12 @@
+name: ferry_delay_app
+title: ferry_delay_app
+username: e-schuler
+account: e-schuler
+server: pub.ferryland.posit.team
+hostUrl: https://pub.ferryland.posit.team/__api__
+appId: 432
+bundleId: 900
+url: https://pub.ferryland.posit.team/content/b3e57fc7-4cc1-4ec8-ae82-4df7682f2c6c/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE

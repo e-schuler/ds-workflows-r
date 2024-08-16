@@ -76,7 +76,7 @@ CONDITION_OVERRIDE=STOP
 
 💡 Remember, the `.Renviron` file does not get deployed with this content, and you should not commit it to git. It is a local file that sets environment variables for your R session. You will be able to set this variable in the "Vars" pane on Connect when you deploy the report if you want to implement an override.
 
-🛑 WORKSHOP participants! We are going to stop here and deploy this. Because we want to include our environment variable, let's deploy from the R console and provide the environment variable initially rather than adding it from the Connect UI. 
+🛑 WORKSHOP participants! We are going to stop here and deploy this. Because we want to include our environment variable, let's deploy from the R console and provide the environment variable initially rather than adding it from the Connect UI.
 
 ```{r}
 #| eval: false
@@ -84,7 +84,7 @@ CONDITION_OVERRIDE=STOP
 # run this in your R console
 rsconnect::deployApp(appFiles = "03-data-clean-validate.qmd", envVars = "CONDITION_OVERRIDE")
 
-``` 
+```
 
 ### Print a notification if an override is in place
 

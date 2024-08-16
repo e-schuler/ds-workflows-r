@@ -13,7 +13,7 @@ The goals of this activity are to:
 Use the `{connectapi}` package to:
 
 -   Retrieve historical content usage data
--   Add your neighbor as a viewer to your content item  
+-   Add your neighbor as a viewer to your content item
 
 ## Setup
 
@@ -29,7 +29,7 @@ library(tidyverse)
 
 🔄 Task
 
-First let's see what content YOU have published to Connect. 
+First let's see what content YOU have published to Connect.
 
 ```{r}
 #| label: get my content information
@@ -51,7 +51,7 @@ content_df |>
     select(guid, name, title, content_url, dashboard_url)
 ```
 
-We'll get usage information for a content item of interest. As a suggestion, how about choosing your model API because it has gotten some use. 
+We'll get usage information for a content item of interest. As a suggestion, how about choosing your model API because it has gotten some use.
 
 Important Note - In the Workshop, your API key is scoped as a "Publisher" so the results below will be limited to content that you own. You will not be able to pull usage data for content that you do not own.
 
@@ -59,7 +59,7 @@ Important Note - In the Workshop, your API key is scoped as a "Publisher" so the
 #| label: get the content guid for the model API
  
 content_guid <- content_df |> 
-    filter(str_detect(name, "ferry_model")) |> 
+    filter(str_detect(name, "rferry_model")) |> 
     pull(guid)
 
 ```
@@ -90,7 +90,6 @@ usage
 
 ```
 
-
 ## Task 2 - Add your neighbor as a viewer to your content
 
 # For the specified content item add the desired user
@@ -106,7 +105,7 @@ Now let's use the API to add someone as a viewer to your content item.
 # Notice that with your "Publisher" API key, some of the user information is not visible to you 
 all_users <- get_users(client, limit = Inf) |> select(username, first_name, last_name, guid)
 
-my_neighbor_username <- "________"
+my_neighbor_username <- "kmasiello"
 
 user_guid <- all_users |> 
     filter(username == my_neighbor_username) |> 
